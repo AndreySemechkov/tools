@@ -1,12 +1,13 @@
 # Note: you need to be using OpenAI Python v0.27.0 for the code below to work
-import openai
+from openai import OpenAI
 import os
 import click
 
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 assert OPENAI_API_KEY, ("OPENAI_API_KEY env variable not set")
-models = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k"]
+client = OpenAI(api_key=OPENAI_API_KEY)
+models = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k", "gpt-4-1106-preview"]
 
 class Context:
     def __init__(self, role, content):
@@ -24,12 +25,8 @@ def ai_answer(prompt, format, style, model):
     ]
     CONTEXT.append(Context(role="user", content=prompt).to_dict())
     msgs.extend(CONTEXT)
-    openai.api_key = OPENAI_API_KEY
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=msgs
-    )
-    response_txt = response["choices"][0]['message']['content'] # type: ignore
+    response = client.chat.completions.create(model=model,messages=msgs)
+    response_txt = response.choices[0].message.content
     CONTEXT.append(Context(role="assistant", content=response_txt).to_dict())
     return response_txt
 

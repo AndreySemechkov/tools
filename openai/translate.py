@@ -1,18 +1,17 @@
 import os
 import sys
-import openai
+from openai import OpenAI
 from pydub import AudioSegment
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 assert OPENAI_API_KEY, ("OPENAI_API_KEY env variable not set")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 def transcribe_audio(api_key, audio_file):
-    openai.api_key = api_key
-    return openai.Audio.transcribe("whisper-1", audio_file)["text"] # type: ignore
+    return client.audio.transcribe("whisper-1", audio_file)["text"] # type: ignore
 
 def translate(api_key, audio_file):
-    openai.api_key = api_key
-    return openai.Audio.translate("whisper-1", audio_file)["text"]  # type: ignore
+    return client.audio.translate("whisper-1", audio_file)["text"]  # type: ignore
 
 def get_audio_file(path):
     # read a a file frop path with rb mode

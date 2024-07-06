@@ -34,7 +34,7 @@ def read_prompt(format, style, model):
     prompt = ""
     while prompt != "exit":
         prompt = input("Enter your prompt: ")
-        if prompt.startswith("/"):
+        if prompt.startswith("/") or prompt.startswith("~"):
             with open(prompt, "r") as file:
                 prompt = file.read()
             print(f"{prompt}\n")

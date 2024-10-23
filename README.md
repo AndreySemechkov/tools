@@ -21,9 +21,6 @@ In today's fast-paced world of DevOps, automation is key to saving time and redu
 
 The `mysql` directory is your go-to place for MySQL-related automation:
 
-- `binlog.backup.config.template`: Template for configuring binlog_backup.sh script.
-- `binlog_backup.sh`: Script to perform MySQL binlog backups.
-- `download_audit_log.py`: Python script for downloading AWS RDS MySQL audit logs.
 - `myloader_mydumper`: A Dockerized solution for logical backup and restore at scale of MySQL databases. Utilizing: azcopy, mysql, mydumper, myloader, percona-toolkit and Dockerfile.  
   - `Dockerfile`: Dockerfile for creating my portable MySQL toolkit container.
   - `mysqlkit.sh`: CLI toolkit for MySQL database backup and restore. The MySQL Toolkit 🚀 supports the following commands:

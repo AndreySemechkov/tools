@@ -1,6 +1,6 @@
 #!/bin/bash -e
-# cleanup nsed from apt
-sudo apt-get auto-remove
+# cleanup orphaned apt dependencies
+apt-get auto-remove
 # Retrieve and display kernel information
 uname -a
 IN_USE=$(uname -r)

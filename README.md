@@ -17,6 +17,35 @@ In today's fast-paced world of DevOps, automation is key to saving time and redu
 ## Scripts 📜
 
 
+# Free disk space by removng unused Kernels and Kernel Headers
+
+### Requirements
+- Debian-based Linux distribution
+- Root/sudo privileges
+
+Ubuntu Server, Linux Mint and other Debian-based distributions keep all old kernels use alot of storage. This is a script for Debian-based Linux distributions that safely removes old kernel versions and headers while preserving the currently running kernel. Additionally, there are scenarios when our package manager decides to keep orphaned dependencies. For instance, the make dependencies often become unnecessary after building a package. Therefore, we might want to remove them. 
+
+### Features
+- Identifies and lists outdated kernel packages
+- Shows kernel modules targeted for removal
+- Requires explicit confirmation to perform deletion
+- Cleans up associated kernel headers and modules (Preserves the currently active kernel)
+- Removes orphaned apt dependencies
+
+### Usage
+```bash
+# Preview changes
+chmod +x ./linux/kernels-cleanup.sh
+./linux/kernels-cleanup.sh
+
+# Execute removal
+sudo ./linux/kernels-cleanup.sh exec
+```
+
+
+
+**Note:** Always verify the listed kernels before executing the removal process to prevent unintended deletions.
+
 ### MySQL 🐬
 
 The `mysql` directory is your go-to place for MySQL-related automation:

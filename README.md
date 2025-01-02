@@ -1,23 +1,6 @@
-# 🚀 My Automation Repository 🛠️
+# 🛠️ Useful Tools and Scripts 🛠️
 
-Welcome my Automation Repository!🤖
-
-## Table of Contents 📚
-
-- [Introduction](#introduction)
-- [Scripts](#scripts)
-  - [MySQL](#mysql)
-  - [OpenAI](#openai)
-- [Getting Started](#getting-started)
-
-## Introduction 📝
-
-In today's fast-paced world of DevOps, automation is key to saving time and reducing errors. This repository contains a collection of scripts and configurations that will help you automate various DevOps tasks.
-
-## Scripts 📜
-
-
-# Free disk space by removng unused Kernels and Kernel Headers
+# 🌀 Free disk space by removng unused Kernels and Kernel Headers
 
 ### Requirements
 - Debian-based Linux distribution
@@ -50,7 +33,7 @@ sudo ./linux/kernels-cleanup.sh exec
 
 The `mysql` directory is your go-to place for MySQL-related automation:
 
-- `myloader_mydumper`: A Dockerized solution for logical backup and restore at scale of MySQL databases. Utilizing: azcopy, mysql, mydumper, myloader, percona-toolkit and Dockerfile.  
+- `backup`: A Dockerized solution for performant logical backup and restore at scale of MySQL databases. Utilizing: azcopy, mysql, mydumper, myloader, percona-toolkit and Dockerfile.  
   - `Dockerfile`: Dockerfile for creating my portable MySQL toolkit container.
   - `mysqlkit.sh`: CLI toolkit for MySQL database backup and restore. The MySQL Toolkit 🚀 supports the following commands:
     - help: Display the script's usage and available options.
@@ -64,8 +47,8 @@ The `mysql` directory is your go-to place for MySQL-related automation:
 
 Need an AI assistant in your workflow? Check out the `openai` directory:
 
-- `chat.py`: Python script for integrating OpenAI's GPT-3 API into your automation.
-- `translate.py`: Python script for language translation using OpenAI's language models.
+- `chat.py`: Interactive CLI for interacting with OpenAI models with customizable response formats and AI personalities.
+- `translate.py`: CLI tool for translating audio files to text using OpenAI's Whisper API. Supports automatic format conversion and handles multiple audio formats.
 
 
 ## License 📄
